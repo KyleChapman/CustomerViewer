@@ -27,15 +27,15 @@ Partial Class CustomerViewer
         Me.lbLastName = New System.Windows.Forms.Label()
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.lbTitle = New System.Windows.Forms.Label()
-        Me.cmbTitles = New System.Windows.Forms.ComboBox()
         Me.tbLastName = New System.Windows.Forms.TextBox()
         Me.tbFirstName = New System.Windows.Forms.TextBox()
         Me.lbIdentifcationNumber = New System.Windows.Forms.Label()
-        Me.tbIdentifcationNumber = New System.Windows.Forms.TextBox()
+        Me.tbIdentificationNumber = New System.Windows.Forms.TextBox()
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.ttpCustomerTips = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tbTitles = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'chkVIP
@@ -82,19 +82,6 @@ Partial Class CustomerViewer
         Me.lbTitle.Text = "&Title: "
         Me.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'cmbTitles
-        '
-        Me.cmbTitles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTitles.Enabled = False
-        Me.cmbTitles.FormattingEnabled = True
-        Me.cmbTitles.Items.AddRange(New Object() {"Mr.", "Mrs.", "Miss.", "Ms.", "Mstr.", "Dr."})
-        Me.cmbTitles.Location = New System.Drawing.Point(109, 44)
-        Me.cmbTitles.Margin = New System.Windows.Forms.Padding(4)
-        Me.cmbTitles.Name = "cmbTitles"
-        Me.cmbTitles.Size = New System.Drawing.Size(160, 24)
-        Me.cmbTitles.TabIndex = 8
-        Me.ttpCustomerTips.SetToolTip(Me.cmbTitles, "Displays the title for the current customer")
-        '
         'tbLastName
         '
         Me.tbLastName.Enabled = False
@@ -126,18 +113,19 @@ Partial Class CustomerViewer
         Me.lbIdentifcationNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lbIdentifcationNumber.UseWaitCursor = True
         '
-        'tbIdentifcationNumber
+        'tbIdentificationNumber
         '
-        Me.tbIdentifcationNumber.Enabled = False
-        Me.tbIdentifcationNumber.Location = New System.Drawing.Point(109, 13)
-        Me.tbIdentifcationNumber.Margin = New System.Windows.Forms.Padding(4)
-        Me.tbIdentifcationNumber.Name = "tbIdentifcationNumber"
-        Me.tbIdentifcationNumber.Size = New System.Drawing.Size(160, 22)
-        Me.tbIdentifcationNumber.TabIndex = 15
-        Me.ttpCustomerTips.SetToolTip(Me.tbIdentifcationNumber, "Displays the identifcation number for the current customer")
+        Me.tbIdentificationNumber.Enabled = False
+        Me.tbIdentificationNumber.Location = New System.Drawing.Point(109, 13)
+        Me.tbIdentificationNumber.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbIdentificationNumber.Name = "tbIdentificationNumber"
+        Me.tbIdentificationNumber.Size = New System.Drawing.Size(160, 22)
+        Me.tbIdentificationNumber.TabIndex = 15
+        Me.ttpCustomerTips.SetToolTip(Me.tbIdentificationNumber, "Displays the identifcation number for the current customer")
         '
         'btnPrevious
         '
+        Me.btnPrevious.Enabled = False
         Me.btnPrevious.Location = New System.Drawing.Point(16, 206)
         Me.btnPrevious.Name = "btnPrevious"
         Me.btnPrevious.Size = New System.Drawing.Size(75, 23)
@@ -148,6 +136,7 @@ Partial Class CustomerViewer
         '
         'btnExit
         '
+        Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.Location = New System.Drawing.Point(105, 206)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
@@ -166,6 +155,16 @@ Partial Class CustomerViewer
         Me.ttpCustomerTips.SetToolTip(Me.btnNext, "View the next customer in the list")
         Me.btnNext.UseVisualStyleBackColor = True
         '
+        'tbTitles
+        '
+        Me.tbTitles.Enabled = False
+        Me.tbTitles.Location = New System.Drawing.Point(109, 45)
+        Me.tbTitles.Margin = New System.Windows.Forms.Padding(4)
+        Me.tbTitles.Name = "tbTitles"
+        Me.tbTitles.Size = New System.Drawing.Size(160, 22)
+        Me.tbTitles.TabIndex = 19
+        Me.ttpCustomerTips.SetToolTip(Me.tbTitles, "Displays the title for the current customer")
+        '
         'CustomerViewer
         '
         Me.AcceptButton = Me.btnNext
@@ -173,16 +172,16 @@ Partial Class CustomerViewer
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnExit
         Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.Controls.Add(Me.tbTitles)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.lbIdentifcationNumber)
-        Me.Controls.Add(Me.tbIdentifcationNumber)
+        Me.Controls.Add(Me.tbIdentificationNumber)
         Me.Controls.Add(Me.chkVIP)
         Me.Controls.Add(Me.lbLastName)
         Me.Controls.Add(Me.lblFirstName)
         Me.Controls.Add(Me.lbTitle)
-        Me.Controls.Add(Me.cmbTitles)
         Me.Controls.Add(Me.tbLastName)
         Me.Controls.Add(Me.tbFirstName)
         Me.MaximizeBox = False
@@ -199,13 +198,13 @@ Partial Class CustomerViewer
     Friend WithEvents lbLastName As Label
     Friend WithEvents lblFirstName As Label
     Friend WithEvents lbTitle As Label
-    Friend WithEvents cmbTitles As ComboBox
     Friend WithEvents tbLastName As TextBox
     Friend WithEvents tbFirstName As TextBox
     Friend WithEvents lbIdentifcationNumber As Label
-    Friend WithEvents tbIdentifcationNumber As TextBox
+    Friend WithEvents tbIdentificationNumber As TextBox
     Friend WithEvents btnPrevious As Button
     Friend WithEvents btnExit As Button
     Friend WithEvents btnNext As Button
     Friend WithEvents ttpCustomerTips As ToolTip
+    Friend WithEvents tbTitles As TextBox
 End Class
